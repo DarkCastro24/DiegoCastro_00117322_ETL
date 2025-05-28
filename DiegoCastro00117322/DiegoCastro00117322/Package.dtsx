@@ -11,8 +11,8 @@
   DTS:LocaleID="17418"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{D6B6796F-AD13-48A3-B0E1-E7E63EA13094}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{62FBBB28-3ADB-4017-8E17-D9CAF3B1F9A8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAjEMB3KsnMU2s0GXyQ7Z+TAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADx4j9JVWq2HLPmBb1er78hIz57ddEWeZ7vHsEficA8/gAAAAAOgAAAAAIAACAAAABwBrQDrpUD6x9u9xpTqCnUQKnqxoR5QzTsoTO8l+TZSyAAAAB/JA2zlLmfm83Wsa0kEu9GcuIcPvmlEIKn/uRorntqGEAAAAB6rfFSwEB0Mjq+a8F8K+FFyIByZiXE5kKXcNWfQmG+z3rgnlKr14vNiQllCz3SSsIJDT9ObFPclVdaDWeHmgb6</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAjEMB3KsnMU2s0GXyQ7Z+TAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABmsB7k6jog3IwABobzESwf3f9qvF0JLosYP1PNKmuYFwAAAAAOgAAAAAIAACAAAAAyOottm1YKwD6M47C8ZuLXXLD8Va+H3us9hagtE7YCWyAAAADciiIxk/pPtcq4jjeokjlrctyD6qRGiQcBkqujmN55pUAAAACwTR00cfOSWN5+J+1BfdOAvBo7vlmy0et3Ya50IVVjUQAjPRQ7AP6I0jb+L/wK5x1zs5lypMutcYSFww+m+E0Z</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -46,7 +46,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAjEMB3KsnMU2s0GXyQ7Z+TAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABbtPh1EtOSmz63923vR4VziF5GotmIBD7+IUAwtGlAlQAAAAAOgAAAAAIAACAAAACFR47Hv42CD88N4Yj/09cZya43pMnvxXLZpGN4+6dwJiAAAABohg5+iQ9ve2d0AtgPvSOStUjSr8rqlBR5NYddVUtpz0AAAABBz4pa/xcoDjCdgdh3OBN77XEhTxsf5Qo3RxG8CY3wDQWpH5orGbkWwwgfDUui3XdtBZGidRefg2pDBPcr3hBD</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAjEMB3KsnMU2s0GXyQ7Z+TAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACvKyuggOf1q9vVRHHVk1cYbRmu6/BbfTJkzTKiMGencQAAAAAOgAAAAAIAACAAAABSysix7SqH0QcSOdbQDNagiykuP6Dm1SeJAQ8Zcp1+lCAAAAB9Ls8GRKLudkU9VN+z7qQ5P0FLViYKjoDKco8VN5ba/UAAAAAzbSNzb3pL/yGvKe9eTSuR0lZQomJPdqrbjSD2b/Q6I3K0+/e/7jJwexw4Xn0bydAHkx6OSe7VtEuRW5BeEFpb</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -82,7 +82,7 @@
                 <property
                   dataType="System.String"
                   description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
-                  name="OpenRowset">[dbo].[DimCustomer2]</property>
+                  name="OpenRowset">[dbo].[DimCustomerETL]</property>
                 <property
                   dataType="System.String"
                   description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
@@ -104,7 +104,7 @@
                   dataType="System.Int32"
                   description="Especifica el modo utilizado para obtener acceso a la base de datos."
                   name="AccessMode"
-                  typeConverter="AccessMode">3</property>
+                  typeConverter="AccessMode">0</property>
                 <property
                   dataType="System.Boolean"
                   description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
@@ -150,14 +150,6 @@
                       cachedName="GeographyKey"
                       externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[GeographyKey]"
                       lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[GeographyKey]" />
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[CustomerAlternateKey]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="10"
-                      cachedName="CustomerAlternateKey"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[CustomerAlternateKey]"
-                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[CustomerAlternateKey]" />
                     <inputColumn
                       refId="Package\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[Title]"
                       cachedDataType="wstr"
@@ -337,11 +329,6 @@
                       dataType="i4"
                       name="GeographyKey" />
                     <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[CustomerAlternateKey]"
-                      dataType="wstr"
-                      length="15"
-                      name="CustomerAlternateKey" />
-                    <externalMetadataColumn
                       refId="Package\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Title]"
                       dataType="wstr"
                       length="8"
@@ -433,8 +420,7 @@
                       name="FrenchOccupation" />
                     <externalMetadataColumn
                       refId="Package\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[HouseOwnerFlag]"
-                      dataType="wstr"
-                      length="1"
+                      dataType="bool"
                       name="HouseOwnerFlag" />
                     <externalMetadataColumn
                       refId="Package\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[NumberCarsOwned]"
@@ -443,17 +429,17 @@
                     <externalMetadataColumn
                       refId="Package\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressLine1]"
                       dataType="wstr"
-                      length="120"
+                      length="60"
                       name="AddressLine1" />
                     <externalMetadataColumn
                       refId="Package\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[AddressLine2]"
                       dataType="wstr"
-                      length="120"
+                      length="60"
                       name="AddressLine2" />
                     <externalMetadataColumn
                       refId="Package\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Phone]"
                       dataType="wstr"
-                      length="20"
+                      length="25"
                       name="Phone" />
                     <externalMetadataColumn
                       refId="Package\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[DateFirstPurchase]"
@@ -517,10 +503,9 @@
                   dataType="System.String"
                   description="Comando SQL para ejecutar."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DISTINCT
     c.CustomerID AS CustomerKey,
     c.TerritoryID AS GeographyKey,
-    c.AccountNumber AS CustomerAlternateKey,
     p.Title,
     p.FirstName,
     p.MiddleName,
@@ -607,17 +592,6 @@ LEFT JOIN Person.PersonPhone ph ON ph.BusinessEntityID = p.BusinessEntityID</pro
                       externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[GeographyKey]"
                       lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[GeographyKey]"
                       name="GeographyKey"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[CustomerAlternateKey]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[CustomerAlternateKey]"
-                      length="10"
-                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[CustomerAlternateKey]"
-                      name="CustomerAlternateKey"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Title]"
@@ -876,12 +850,6 @@ LEFT JOIN Person.PersonPhone ph ON ph.BusinessEntityID = p.BusinessEntityID</pro
                       dataType="i4"
                       name="GeographyKey" />
                     <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[CustomerAlternateKey]"
-                      codePage="1252"
-                      dataType="str"
-                      length="10"
-                      name="CustomerAlternateKey" />
-                    <externalMetadataColumn
                       refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Title]"
                       dataType="wstr"
                       length="8"
@@ -1013,13 +981,6 @@ LEFT JOIN Person.PersonPhone ph ON ph.BusinessEntityID = p.BusinessEntityID</pro
                       dataType="i4"
                       lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[GeographyKey]"
                       name="GeographyKey" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[CustomerAlternateKey]"
-                      codePage="1252"
-                      dataType="str"
-                      length="10"
-                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[CustomerAlternateKey]"
-                      name="CustomerAlternateKey" />
                     <outputColumn
                       refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Title]"
                       dataType="wstr"
@@ -1215,13 +1176,13 @@ LEFT JOIN Person.PersonPhone ph ON ph.BusinessEntityID = p.BusinessEntityID</pro
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="170,42"
-          Id="Package\Tarea Flujo de datos\Origen de OLE DB"
-          TopLeft="329,213" />
-        <NodeLayout
           Size="175,42"
           Id="Package\Tarea Flujo de datos\Destino de OLE DB"
           TopLeft="681,271" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Tarea Flujo de datos\Origen de OLE DB"
+          TopLeft="329,213" />
         <EdgeLayout
           Id="Package\Tarea Flujo de datos.Paths[Salida de origen de OLE DB]"
           TopLeft="499,234">
@@ -1260,14 +1221,6 @@ LEFT JOIN Person.PersonPhone ph ON ph.BusinessEntityID = p.BusinessEntityID</pro
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Tarea Flujo de datos\Origen de OLE DB">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Tarea Flujo de datos\Destino de OLE DB">
     <Properties>
       <Property>
@@ -1277,6 +1230,14 @@ LEFT JOIN Person.PersonPhone ph ON ph.BusinessEntityID = p.BusinessEntityID</pro
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Flujo de datos\Origen de OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
